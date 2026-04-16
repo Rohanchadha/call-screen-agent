@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Gatekeep: Dev API",
+      "type": "shell",
+      "command": "pnpm dev:api",
+      "isBackground": true,
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Gatekeep: Dev Web",
+      "type": "shell",
+      "command": "pnpm dev:web",
+      "isBackground": true,
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Gatekeep: Dev All (API + Web)",
+      "dependsOn": ["Gatekeep: Dev API", "Gatekeep: Dev Web"],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    },
+    {
+      "label": "Gatekeep: Typecheck",
+      "type": "shell",
+      "command": "pnpm -r typecheck",
+      "group": "test",
+      "problemMatcher": ["$tsc"]
+    }
+  ]
+}

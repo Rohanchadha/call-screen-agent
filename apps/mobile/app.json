@@ -1,0 +1,13 @@
+{
+  "name": "Gatekeep",
+  "slug": "gatekeep",
+  "version": "0.1.0",
+  "orientation": "portrait",
+  "userInterfaceStyle": "dark",
+  "scheme": "gatekeep",
+  "ios": { "supportsTablet": false },
+  "android": { "package": "com.gatekeep.app" },
+  "extra": {
+    "apiUrl": "http://localhost:4000"
+  }
+}

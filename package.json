@@ -1,0 +1,25 @@
+{
+  "name": "gatekeep",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Gatekeep — AI call-screening receptionist for India",
+  "packageManager": "pnpm@9.12.0",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "dev:api": "turbo run dev --filter=@gatekeep/api",
+    "dev:web": "turbo run dev --filter=@gatekeep/web",
+    "dev:mobile": "turbo run dev --filter=@gatekeep/mobile"
+  },
+  "devDependencies": {
+    "turbo": "^2.1.3",
+    "typescript": "^5.5.4",
+    "prettier": "^3.3.3"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  }
+}

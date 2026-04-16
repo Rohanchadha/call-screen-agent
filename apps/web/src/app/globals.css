@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { background: #0b0d12; color: #e6e9ef; }
+body { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial; }
+
+.card { @apply bg-gatekeep-card border border-gatekeep-border rounded-xl p-5; }
+.btn  { @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition; }
+.btn-primary { @apply btn bg-gatekeep-accent hover:bg-indigo-500 text-white; }
+.btn-ghost   { @apply btn bg-transparent hover:bg-gatekeep-accentSoft text-white border border-gatekeep-border; }
+.input { @apply w-full bg-gatekeep-bg border border-gatekeep-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gatekeep-accent; }
+.label { @apply block text-xs uppercase tracking-wider text-gatekeep-muted mb-1; }
+.pill  { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium; }
