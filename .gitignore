@@ -9,6 +9,7 @@ build
 *.log
 .DS_Store
 coverage
+*.tsbuildinfo
 ios/Pods
 android/.gradle
 android/build
