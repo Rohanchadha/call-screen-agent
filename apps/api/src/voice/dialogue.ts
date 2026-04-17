@@ -17,6 +17,14 @@ const client = env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: env.OPENAI_API_KEY })
   : null;
 
+// Log once at module load so we know which brain is active.
+// eslint-disable-next-line no-console
+console.log(
+  client
+    ? '[dialogue] ✓ Using OpenAI GPT-4o-mini (real LLM)'
+    : '[dialogue] ⚠ No OPENAI_API_KEY — using deterministic mock LLM',
+);
+
 export interface DialogueTurn {
   speaker: 'agent' | 'caller';
   text: string;

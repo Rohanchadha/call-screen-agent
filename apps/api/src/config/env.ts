@@ -1,5 +1,28 @@
-import 'dotenv/config';
+import { config as loadDotenv } from 'dotenv';
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { z } from 'zod';
+
+// Look for .env in the current dir, then walk up to the monorepo root.
+// This lets you keep a single .env at the repo root.
+function loadEnvFromClosest() {
+  let dir = process.cwd();
+  for (let i = 0; i < 5; i++) {
+    const candidate = resolve(dir, '.env');
+    if (existsSync(candidate)) {
+      loadDotenv({ path: candidate });
+      // eslint-disable-next-line no-console
+      console.log(`[env] loaded ${candidate}`);
+      return;
+    }
+    const parent = resolve(dir, '..');
+    if (parent === dir) break;
+    dir = parent;
+  }
+  // eslint-disable-next-line no-console
+  console.log('[env] no .env found in cwd or parents — using process env only');
+}
+loadEnvFromClosest();
 
 const Env = z.object({
   API_PORT: z.coerce.number().default(4000),
